@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Enter Details</h1>
+<form action="" method="post" novalidates>
+    {{form.hidden_tag()}}
+    <p>
+        {{form.given_name.label}}<br>
+        {{form.given_name(size=32)}}<br>
+        {% for error in form.given_name.errors %}
+        <span style="color:red;">[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.family_name.label}}<br>
+        {{form.family_name(size=32)}}<br>
+        {% for error in form.family_name.errors %}
+        <span style="color:red";>[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.profile_image.label}}<br>
+        {{form.profile_image(size=32)}}<br>
+        {% for error in form.profile_image.errors %}
+        <span style="color:red";>[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>{{form.submit}}</p>
+</form>
+
+{% endblock %}
